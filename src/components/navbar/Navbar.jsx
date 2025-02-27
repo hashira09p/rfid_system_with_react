@@ -6,6 +6,8 @@ import search_icon_light from "../../assets/search-b.png";
 import search_icon_dark from "../../assets/search-w.png";
 import toggle_light from "../../assets/night.png";
 import toggle_dark from "../../assets/day.png";
+import tupLogo from "../../assets/tup-removebg-preview.png"
+import { Link } from "react-router-dom";
 
 const Navbar = ({ theme, setTheme }) => {
 
@@ -13,14 +15,13 @@ const Navbar = ({ theme, setTheme }) => {
     theme == "light" ? setTheme('dark') : setTheme('light');
   }
 
-
   return (
     <div className="navbar">
-      <img src={theme == "light" ? logo_white : logo_dark} alt="" className="logo" />
+      <img src={tupLogo} alt="" className="logo" />
       <ul className={theme == "dark" ? "color-white" : "color-black"}>
-        <li>Home</li>
-        <li>Cards</li>
-        <li>Schedules</li>
+        <li><Link to="/">Users</Link></li>
+        <li><Link to="/cards">Cards</Link></li>
+        <li><Link to="/schedules">Schedules</Link></li>
       </ul>
 
       <div className={`search-box ${theme}`}>
